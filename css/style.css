@@ -11,11 +11,23 @@ html {
 
 /* PARALLAX IMAGE STYLING */
 
-/*  */
-div.pimg1,
-div.pimg2,
-div.pimg3 {
+/* we position these as relative with no repeating images and centered. we also make sure it covers the full container size */
+
+body > div.pimg1,
+body > div.pimg2,
+body > div.pimg3 {
   color: #000;
+  position: relative;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /*
+  fixed = parallax effect
+  scroll = normal (default)
+   */
+  background-attachment: fixed;
 }
 
 div.pimg1 {
@@ -29,4 +41,27 @@ div.pimg2 {
 div.pimg3 {
   background: url('../img/img3.jpg');
   min-height: 400px;
+}
+
+/* PARALLAX TEXT */
+
+.caption {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+  font-size: 1.4rem;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+}
+
+.caption .border {
+  background-color: #111;
+  color: white;
+  padding: 1rem;
+}
+
+.caption .border.trans {
+  background-color: rgba(0, 0, 0, 0.5);
 }
